@@ -51,11 +51,13 @@ Website will be server on [`localhost`](http://127.0.0.1:8000/)
 
 ## Heroku
 
-Create new app: `heroku new hackernews-estonia`
+Create new app: `heroku create hackernews-estonia`
 
 Push to Heroku: `git push heroku master`
 
-`heroku run python manage.py migrate`
+`heroku run python ./manage.py migrate --run-syncdb`
+
+Open: `heroku open`
 
 Show domains: `heroku domains`
 
