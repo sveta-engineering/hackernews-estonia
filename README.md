@@ -43,8 +43,6 @@ Create a virtual environment: `python3 -m venv env`
 
 Activate virtual environment: `source env/bin/activate`
 
-Install Django: `python -m pip install django`
-
 Install requirements: `pip3 install -r requirements.txt`
 
 Run: `python3 manage.py runserver`
