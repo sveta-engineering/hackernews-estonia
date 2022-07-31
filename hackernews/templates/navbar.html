@@ -1,0 +1,15 @@
+<nav>
+    <a href="{% url 'home' %}" class="navbutton">news</a>
+    <a href="{% url 'calendar' %}" class="navbutton">events</a>
+    <a href="{% url 'jobs' %}" class="navbutton">jobs</a>
+    <a href="{% url 'about' %}" class="navbutton">about</a>
+
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'signout' %}" class="logout">[logout]</a>
+    <a href="{% url 'user_info' user.username%}" class="login">{{ user.username }}</a>
+    {% else %}
+    <a href="{% url 'signup' %}" class="logout">[register]</a>
+    <a href="{% url 'signin' %}" class="login">login</a>
+    {% endif %}
+
+</nav>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+    <p class="profile-title"> {{ user.username }}'s profile: my upvotes </p>
+</article>
+
+<article>
+    <p class="profile-title"> news </p>
+</article>
+
+<article>
+    <ul>
+        {%for newsitem in news%}
+        <li><a href="{% url 'post' newsitem.post.id %}" class="profile-list"> {{ newsitem.post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</article>
+
+<article>
+    <p class="profile-title">comments</p>
+</article>
+
+<article>
+    <ul>
+        {%for item in comments%}
+        <li><a href="{% url 'post' item.comment.post.id %}" class="profile-list"> {{ item.comment.content }}</a></li>
+        {% endfor %}
+    </ul>
+</article>
+
+
+
+{% endblock %}

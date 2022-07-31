@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% for post in posts %}
+
+{% if post.creator == request.user %}
+<article>
+  <p class="link"><a href="{% url 'vote' post.id %}" class="upvote">^ </a> <a href={{post.url}} class="title">{{ post.title }}</a> ({{ post.domain }})</p>
+  <p class="subscript">{{ post.votes }} points by {{post.creator.username}} | {{ post.created_on|timesince|cut:","|truncatewords:2|cut:","|cut:"…" }} ago | <a href="{% url 'post' post.id %}" class="link"> {{ post.comments }} comments</a> | <a href="{% url 'edit' post.id %}" class="subscript"> edit</a></p>
+</article>
+{% else %}
+<article>
+  <p class="link"><a href="{% url 'vote' post.id %}" class="upvote">^ </a> <a href={{post.url}} class="title">{{ post.title }}</a> ({{ post.domain }})</p>
+  <p class="subscript">{{ post.votes }} points by {{post.creator.username}} | {{ post.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href="{% url 'post' post.id %}" class="link"> {{ post.comments }} comments</a></p>
+</article>
+{% endif %}
+
+{% endfor %}
+
+
+{% endblock %}

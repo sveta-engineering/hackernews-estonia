@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+    <p class="profile-title"> {{ user.username }}'s profile: my events </p>
+</article>
+
+<article>
+    <ul>
+{%for event in events%}
+    <li><a href="{% url 'event_detail' event.id %}" class="profile-list"> {{ event.title }} </a> | <a href="{% url 'event_edit' event.id %}" class="subscript"> edit</a></li>
+{% endfor %}
+</ul>
+</article>
+
+{% endblock %}

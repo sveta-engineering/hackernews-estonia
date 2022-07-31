@@ -1,0 +1,262 @@
+/* BASE */
+
+html {
+    font-size: 18px; /* px means "pixels": the base font size is now 10 pixels high  */
+    font-family: "Courier New"; /* this should be the rest of the output you got from Google fonts */
+    background-color: #2b2a33;
+    color: #FFFFFF;
+  }
+
+img {
+    display: block;
+    width: 90%;
+    max-width: 600px;
+    margin: 1em auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: auto;
+  }
+
+.header{
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+nav {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1em auto;
+  margin-top: 5px;
+  padding: 5px 0px 15px 0px;
+}
+
+.navbutton {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+.navbutton:hover {
+    color: #00FF00;
+  }
+
+.login {
+  color: #FFFFFF;
+  text-decoration: none;
+  float: right;
+  padding-left: 5px;
+}
+
+.login:hover {
+  color: #00FF00;
+}
+
+.logout {
+    color: #9c9c9c;
+    text-decoration: none;
+    float: right;
+    padding-left: 5px;
+}
+
+.logout:hover {
+  color: #00FF00;
+}
+
+/* NEWS */
+
+article {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0em auto;
+}
+  
+.upvote {
+    color: #FFFFFF;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.upvote:hover {
+  color: #00FF00;
+}
+
+.title {
+    color: #FFFFFF;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.regular-title {
+  color: #FFFFFF;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.title:visited {
+  color: #9c9c9c;
+}
+
+.title:hover {
+  color: #00FF00;
+  }
+
+.link {
+    color: #9c9c9c;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 0px;
+}
+
+.subscript {
+    color: #9c9c9c;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+/* COMMENTS */
+
+.comment-block {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.comment-block-tab-1 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 40px;
+}
+
+.comment-block-tab-2 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 80px;
+}
+
+.comment-block-tab-3 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 120px;
+}
+
+.comment-block-tab-4 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 160px;
+}
+
+.comment-block-tab-5 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 200px;
+}
+
+.comment-block-tab-6 {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0em auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 240px;
+}
+
+.comments {
+  font-family: "Courier New";
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  white-space: pre-wrap;
+}
+
+.comments-upvote {
+  color: #FFFFFF;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.comments-title {
+  color: #9c9c9c;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.comments-upvote:hover {
+color: #00FF00;
+}
+
+/* ABOUT */
+
+.about {
+  margin-top: 0px;
+  display: inline-block;
+}
+
+/* PROFILE */
+
+.profile-title {
+  margin-top: 0px;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.profile-link {
+  color: #FFFFFF;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  color: #00FF00;
+  }
+
+.profile-list {
+  font-family: "Courier New";
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  white-space: pre-wrap;
+  text-decoration: none;
+}
+
+/* JOBS */
+
+.title-job {
+  color: #FFFFFF;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+label:empty { display: none; }
+
+

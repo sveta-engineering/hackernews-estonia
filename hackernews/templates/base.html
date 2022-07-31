@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>hackernews.ee</title>
+        {% load static %}
+        <link rel="icon" href="{% static 'assets/favicon.ico' %}" type="image/x-icon">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
+
+    </head>
+
+    <body>
+        {% load static %}
+        <!-- <img src="{% static 'assets/header-image.png' %}"> -->
+        <pre class="header">
+           __        ___  __        ___       __    ___  ___
+|__|  /\  /    |__/ |__  |__) |\ | |__  |  | /__   |__  |__
+|  | /--\ \__  |  \ |___ |  \ | \| |___ |/\|  __/ .|___ |___</pre>
+
+        {% include 'navbar.html' %}
+        
+        {% block content %}
+        {% endblock %}
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+    
+</html>
+
+
+

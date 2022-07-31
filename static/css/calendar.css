@@ -1,0 +1,85 @@
+/* CALENDAR */
+
+/* cal/static/cal/css/styles.css */
+
+.calendar {
+    width: 98%;
+    margin: auto;
+    font-size: 13px;
+  }
+  
+  .calendar tr, .calendar td {
+    border: 1px solid #FFFFFF;
+  }
+  
+  .calendar th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+  
+  .calendar td {
+    width: 200px;
+    height: 100px;
+    padding: 5px 0px 0px 5px;
+  }
+  
+  .month {
+    font-size: 25px;
+  }
+  
+  .date {
+    font-size: 16px;
+  }
+
+  .tday {
+    font-size: 16px;
+    color: #00FF00;
+  }
+  
+  ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+  }
+  
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #00FF00;
+  }
+
+  .left {
+    float: left;
+    display: flex;
+  }
+  
+  .right {
+    float: right;
+    display: flex;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .btn {
+    outline: none;
+    color: #FFFFFF;
+    background-color: transparent;
+    box-shadow: 0 0 0 0;
+    text-decoration: none;
+  }
+  
+  .clearfix {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }

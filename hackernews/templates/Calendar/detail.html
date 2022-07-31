@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+    <p class="title-job">{{ event.title }}</p>
+    <p class="subscript">Posted by: {{ event.creator }}</p>
+    <pre class="comments">{{ event.description }}</pre>
+    <br>
+    <p class="subscript">start: {{ event.start_time }}</p>
+    <p class="subscript">end: {{ event.end_time }}</p>
+</article>
+
+{% endblock %}

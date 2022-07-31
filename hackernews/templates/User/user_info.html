@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+    <p class="profile-title"> {{ user.username }}'s profile </p>
+</article>
+
+<article>
+    <a href="{% url "submit" %}" class="profile-link">submit: news</a>
+</article>
+
+<article>
+    <a href="{% url "event_submit" %}" class="profile-link">submit: event</a>
+</article>
+
+<article>
+    <a href="{% url "jobsubmit" %}" class="profile-link">submit: job</a>
+</article>
+
+<br>
+
+<article>
+    <a href="{% url 'user_submissions' user.username %}" class="profile-link">list: my submissions</a>
+</article>
+
+<article>
+    <a href="{% url 'user_upvotes' user.username %}" class="profile-link">list: my upvotes</a>
+</article>
+
+{% endblock %}

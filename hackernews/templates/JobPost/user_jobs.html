@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+  <p class="profile-title"> {{ user.username }}'s profile: my jobs </p>
+</article>
+
+<article>
+  <ul>
+{% for job in jobs %}
+<li><a href="{% url 'jobdetail' job.id %}" class="profile-list"> {{ job.title }}</a> | <a href="{% url 'jobedit' job.id %}" class="subscript"> edit</a></li>
+{% endfor %}
+</ul>
+</article>
+
+{% endblock %}

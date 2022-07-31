@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<article>
+    {% if post.creator == request.user%}
+    <a href="{{ post.url }}" class="regular-title">{{ post.title }}</a>
+    <p class="subscript">{{ post.votes }} points by {{ post.creator }} | {{ post.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | {{ post.comments }} comments | <a href="{% url 'edit' post.id %}" class="subscript"> edit</a></p>
+    {%else %}
+    <a href="{{ post.url }}" class="regular-title">{{ post.title }}</a>
+    <p class="subscript">{{ post.votes }} points by {{ post.creator }} | {{ post.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | {{ post.comments }} comments</p>
+    {%endif%}
+</article>
+
+{% for comment in comments %}
+
+{% if comment.identifier == 0 %}
+<article class="comment-block">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% elif comment.identifier == 1 %}
+<article class="comment-block-tab-1" class="tab">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% elif comment.identifier == 2 %}
+<article class="comment-block-tab-2" class="tab">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% elif comment.identifier == 3 %}
+<article class="comment-block-tab-3" class="tab">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% elif comment.identifier == 4 %}
+<article class="comment-block-tab-4" class="tab">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% elif comment.identifier == 5 %}
+<article class="comment-block-tab-5" class="tab">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% else %}
+<article class="comment-block-tab-6" class="tab">
+    <p class="comments-title"> <a href="{% url 'commentvote' comment.id %}" class="upvote">^</a> {{ comment.votes }} | {{ comment.creator.username }} | {{ comment.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href = "{% url 'reply' id1=post.id id2=comment.id %}" class="comments-title">reply</a> <a onclick="myFunction({{ comment.id }})" class="comments-title">[-]</a></p>
+    <pre class="comments" id="{{ comment.id }}">{{ comment.content }}</pre>
+</article>
+{% endif %}
+
+{% endfor %}
+
+<article>
+    <br>
+    <form method ='post'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value = "Submit">
+    </form>
+</article>
+
+
+
+{% endblock %}

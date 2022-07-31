@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for job in jobs %}
+
+{% if job.creator == request.user %}
+<article>
+    <a href="{% url 'jobdetail' job.id %}" class="title">{{ job.title }}</a>
+    <p class="subscript">by {{ job.creator }} | {{ job.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago | <a href="{% url 'jobedit' job.id %}" class="subscript">edit</a></p>
+</article>
+{% else %}
+<article>
+    <a href="{% url 'jobdetail' job.id %}" class="title">{{ job.title }}</a>
+    <p class="subscript">by {{ job.creator }} | {{ job.created_on|timesince|truncatewords:2|cut:","|cut:"…" }} ago</p>
+</article>
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+    <p class="profile-title"> {{ user.username }}'s profile: my submissions </p>
+</article>
+
+<article>
+    <p class="profile-title"> news </p>
+</article>
+
+<article>
+    <ul>
+        {%for post in posts%}
+        <li><a href="{% url 'post' post.id %}" class="profile-list"> {{ post.title }}</a> | <a href="{% url 'edit' post.id %}" class="subscript"> edit</a></li>
+        {% endfor %}
+    </ul>
+</article>
+
+<article>
+    <p class="profile-title">comments</p>
+</article>
+
+<article>
+    <ul>
+        {%for comment in comments%}
+        <li><a href="{% url 'post' comment.post.id %}" class="profile-list"> {{ comment.content }}</a> | <a href="{% url 'commentedit' comment.id %}" class="subscript"> edit</a></li>
+        {% endfor %}
+    </ul>
+</article>
+
+<article>
+    <p class="profile-title">events</p>
+</article>
+
+<article>
+    <ul>
+{%for event in events%}
+    <li><a href="{% url 'event_detail' event.id %}" class="profile-list"> {{ event.title }} </a> | <a href="{% url 'event_edit' event.id %}" class="subscript"> edit</a></li>
+{% endfor %}
+</ul>
+</article>
+
+<article>
+    <p class="profile-title">jobs</p>
+</article>
+
+<article>
+    <ul>
+  {% for job in jobs %}
+  <li><a href="{% url 'jobdetail' job.id %}" class="profile-list"> {{ job.title }}</a> | <a href="{% url 'jobedit' job.id %}" class="subscript"> edit</a></li>
+  {% endfor %}
+  </ul>
+  </article>
+
+
+
+{% endblock %}

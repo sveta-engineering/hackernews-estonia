@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+    <p class="title-job">{{ job.title }}</p>
+    <p class="subscript">Posted by: {{ job.creator }}</p>
+    <pre class="comments">{{ job.description }}</pre>
+    <br>
+    <a class="title" href="{{ job.url }}"> [apply] </a>
+</article>
+
+{% endblock %}
