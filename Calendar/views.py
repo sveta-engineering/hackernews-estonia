@@ -56,7 +56,7 @@ def next_month(d):
 
 def get_month_name(n_month):
     month_list = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    return month_list[n_month]
+    return month_list[n_month-1]
 
 def EventSubmitView(request):
     if request.user.is_authenticated:

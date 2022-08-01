@@ -36,10 +36,13 @@ class Calendar(HTMLCalendar):
         for week in self.monthdays2calendar(self.year, self.month):
             cal += f'{self.formatweek(week, events)}\n'
         # format string to mark current date
+        print('self.month: ', self.month)
+        print('datetime.now', datetime.now().month)
         if (self.month == datetime.now().month):
             print(cal)
             today = date.today()
             today = today.strftime("%d")
+            today = today.lstrip("0") # remove leading zero
             result = cal.find(today)
             new_cal_2 = cal[result-6:result-2].replace("date", "tday")
             new_cal_1 = cal[:result-6]
