@@ -6,7 +6,9 @@ Built using Django.
 
 ## TODO
 
+- [x] Alignment issue on chrome?
 - [ ] Calendar year change not working
+- [ ] Collect sources (twitter, newsletters, events, jobs, ...)
 - [ ] Comment 
   - [ ] Toggle view should collapse children as well
 
